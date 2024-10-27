@@ -42,7 +42,8 @@ app.post('/api/products', async (req, res) => {
 app.get('/api/products', async (req, res) => {
   try {
     const products = await Product.find();
-    res.json({message:'Product Getted'});
+    // res.json(products);
+    res.send(`<h1>Products retrieved successfully</h1>`);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
